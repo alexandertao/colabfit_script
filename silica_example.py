@@ -127,10 +127,8 @@ for i in cs_list:
 #print (cs_regexes)
 
 
-
-
 cs_ids = []
-
+'''
 for i, (regex, desc) in enumerate(cs_regexes.items()):
     co_ids = client.get_data(
         'configurations',
@@ -144,9 +142,7 @@ for i, (regex, desc) in enumerate(cs_regexes.items()):
     cs_id = client.insert_configuration_set(co_ids, description=desc,name=cs_names[i])
 
     cs_ids.append(cs_id)
-
-
-# In[ ]:
+'''
 
 
 ds_id = client.insert_dataset(
