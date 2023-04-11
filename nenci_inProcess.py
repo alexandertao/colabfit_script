@@ -6,7 +6,6 @@ from colabfit.tools.configuration import AtomicConfiguration
 # drop_database=True means to start with fresh database
 client = MongoDatabase('new_data_test_alexander', configuration_type=AtomicConfiguration, nprocs=1, drop_database=True)
 
-# In[ ]:
 
 # Loads data, specify reader function if not "usual" file format
 configurations = load_data(
@@ -34,6 +33,7 @@ cs_list = set()
 for c in configurations:
     cs_list.add(*c.info['_name'])
 print(cs_list)
+
 # In[ ]:
 
 
@@ -51,7 +51,7 @@ free_property_definition = {
 
 client.insert_property_definition(free_property_definition)
 
-# In[ ]:
+
 property_map = {
     #    'potential-energy': [{
     #        'energy':   {'field': 'energy',  'units': 'eV'},
@@ -93,7 +93,6 @@ property_map = {
 
     }],
 
-
 }
 
 def tform(c):
@@ -108,7 +107,6 @@ ids = list(client.insert_data(
 ))
 
 all_co_ids, all_pr_ids = list(zip(*ids))
-
 
 #matches to data CO "name" field
 cs_regexes = {
@@ -127,8 +125,6 @@ for i in cs_list:
 #print (cs_regexes)
 
 
-
-
 cs_ids = []
 
 for i, (regex, desc) in enumerate(cs_regexes.items()):
@@ -144,9 +140,6 @@ for i, (regex, desc) in enumerate(cs_regexes.items()):
     cs_id = client.insert_configuration_set(co_ids, description=desc,name=cs_names[i])
 
     cs_ids.append(cs_id)
-
-
-# In[ ]:
 
 
 ds_id = client.insert_dataset(
