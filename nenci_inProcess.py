@@ -4,7 +4,7 @@ from colabfit.tools.configuration import AtomicConfiguration
 
 # call database using its name
 # drop_database=True means to start with fresh database
-client = MongoDatabase('new_data_test_alexander', configuration_type=AtomicConfiguration, nprocs=1, drop_database=True)
+client = MongoDatabase('new_data_test_alexander', configuration_type=AtomicConfiguration, nprocs=4, drop_database=True)
 
 
 # Loads data, specify reader function if not "usual" file format
