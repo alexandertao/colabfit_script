@@ -41,7 +41,6 @@ def reader_OrbNet(p):
 
 #Loads data, specify reader function if not "usual" file format
 '''
-'''
 configurations = load_data(
     file_path='/large_data/new_raw_datasets_2.0/Co_dimer/Co_dimer_data/',
     file_format='folder',
@@ -89,9 +88,7 @@ property_map = {
 def tform(c):
     c.info['per-atom'] = False
 
-
 # In[ ]:
-
 
 ids = list(client.insert_data(
     configurations,
