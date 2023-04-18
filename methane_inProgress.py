@@ -2,6 +2,7 @@ from colabfit.tools.database import MongoDatabase, load_data
 from colabfit.tools.property_settings import PropertySettings
 from colabfit.tools.configuration import AtomicConfiguration
 
+
 # call database using its name
 # drop_database=True means to start with fresh database
 client = MongoDatabase('new_data_test_alexander', configuration_type=AtomicConfiguration, nprocs=4, drop_database=True)
@@ -18,30 +19,12 @@ configurations = load_data(
     generator=False
 )
 
-'''
-
-cs_list = set()
-for c in configurations:
-    cs_list.add(*c.info['_name'])
-print(cs_list)
-'''
 # In[ ]:
 
 
 client.insert_property_definition('/home/ubuntu/notebooks/potential-energy.json')
 client.insert_property_definition('/home/ubuntu/notebooks/atomic-forces.json')
 # client.insert_property_definition('/home/ubuntu/notebooks/cauchy-stress.json')
-'''
-free_property_definition = {
-    'property-id': 'free-energy',
-    'property-name': 'free-energy',
-    'property-title': 'molecular reference energy',
-    'property-description': 'enthalpy of formation',
-    'energy': {'type': 'float', 'has-unit': True, 'extent': [], 'required': True,
-               'description': 'enthalpy of formation'}}
-
-client.insert_property_definition(free_property_definition)
-'''
 
 property_map = {
     'potential-energy': [{
