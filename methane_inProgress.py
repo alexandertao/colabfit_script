@@ -45,6 +45,7 @@ property_map = {
             'software': {'value':'psi4'},
             'method':{'value':'DFT/PBE'},
             'basis':{'value':'cc-pvdz'},
+            }
         }],
 
 }
