@@ -365,18 +365,23 @@ virial
 energy
 
 
-Glycine Azobenzene flexible molecules
+Glycine Azobenzene flexible molecules												in progress
 /large_data/new_raw_datasets_2.0/flexible_molecules/Datasets/ Azobenzene_inversion.xyz  Azobenzene_rotation.xyz  Azobenzene_rotation_and_inversion.xyz  Glycine.xyz
 
 
 
-methane																    in progress
+methane																      in progress		script in gh
 /large_data/new_raw_datasets_2.0/methane/methane.extxyz
 
-Coll
 
-1000water
+Coll																		in progress
 
-BingqingCheng
+
+
+1000water		1645 row
+
+
+
+BingqingCheng	bunch of datasets
 
 

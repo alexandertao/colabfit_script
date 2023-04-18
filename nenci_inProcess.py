@@ -79,7 +79,6 @@ property_map = {
 #            '_metadata': {
 #            'software': {'value':'VASP'},
 #        }
-
 #    }],
 
     'cauchy-stress': [{
@@ -126,6 +125,7 @@ for i in cs_list:
 
 
 cs_ids = []
+
 
 for i, (regex, desc) in enumerate(cs_regexes.items()):
     co_ids = client.get_data(
