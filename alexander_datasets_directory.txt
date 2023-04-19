@@ -357,7 +357,7 @@ CONF 	(120000, 1) 	String identifier of conformations
 
 
 
-Iron Fe nanoparticles															in progress
+Iron Fe nanoparticles															in progress on server
 /large_data/new_raw_datasets_2.0/Iron_nanoparticle/convex_hull.xyz
 magnetic_moments
 forces
@@ -365,13 +365,14 @@ virial
 energy
 
 
-Glycine Azobenzene flexible molecules												in progress
+Glycine Azobenzene flexible molecules												in progress     working on reformatting
 /large_data/new_raw_datasets_2.0/flexible_molecules/Datasets/ Azobenzene_inversion.xyz  Azobenzene_rotation.xyz  Azobenzene_rotation_and_inversion.xyz  Glycine.xyz
 
 
 
 methane																      in progress		script in gh
 /large_data/new_raw_datasets_2.0/methane/methane.extxyz
+                                                                            BrokenPipeError: [Errno 32] Broken pipe)
 
 
 Coll																		in progress
