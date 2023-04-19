@@ -12,7 +12,7 @@ client = MongoDatabase('new_data_test_alexander', configuration_type=AtomicConfi
 configurations = load_data(
     file_path='/large_data/new_raw_datasets_2.0/methane/methane.extxyz',
     file_format='extxyz',
-    name_field='config_type',
+    name_field=None,
     elements=['C', 'H'],
     default_name='methane',
     verbose=True,
