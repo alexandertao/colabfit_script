@@ -52,32 +52,32 @@ sGDML
 	unzip?
 	which are separated																										
 
-benzene2018_dft_FHI-aims:																under review								pending
+benzene2018_dft_FHI-aims:													under review								pending
 	/large_data/new_raw_datasets/sGDML
 
-aspirin_ccsd																		under review								pending
+aspirin_ccsd																under review								pending
 	aspirin_ccsd-test.xyz
 	aspirin_ccsd-train.xyz
 
-benzene_ccsdt																	under review								pending
+benzene_ccsdt														    	under review								pending
 	benzene_ccsd_t-test.xyz
 	benzene_ccsd_t-train.xyz
 
-malonaldehyde_ccsdt																under review								pending	
+malonaldehyde_ccsdt															under review								pending
 	malonaldehyde_ccsd_t-test.xyz
 	malonaldehyde_ccsd_t-train.xyz
 
-toluene_ccsdt																		under review			   					pending
+toluene_ccsdt																under review			   					pending
 	toluene_ccsd_t-test.xyz
 	toluene_ccsd_t-train.xyz
 
-ethanol_ccsdt																		under review								pending	
+ethanol_ccsdt																under review								pending
 	ethanol_ccsd_t-test.xyz
 	ethanol_ccsd_t-train.xyz
 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Ti:Mo_alloys_SilvaAndrea																under review						review	pending
+Ti:Mo_alloys_SilvaAndrea													under review						review	pending
 	CONTCAR
 	/large_data/new_raw_datasets/Ti:Mo_alloys_SilvaAndrea/dataset
  	CE_ML_1H   CE_ML_1T   CE_bulk_1T   CE_bulk_2H
@@ -86,14 +86,14 @@ Ti:Mo_alloys_SilvaAndrea																under review						review	pending
 
 
 
-SN2																						metadata finished				rush
+SN2																				metadata finished				rush
 /large_data/new_raw_datasets/SN2_UnkeOliverMeuwly
 pymongo.errors.OperationFailure: BSONObj size: 24768581 (0x179F045) is invalid. Size must be between 0 and 16793600(16MB) First element: q: { hash: "1648464328262968093" }, full error: {'ok': 0.0, 'errmsg': 'BSONObj size: 24768581 (0x179F045) is invalid. Size must be between 0 and 16793600(16MB) First element: q: { hash: "1648464328262968093" }', 'code': 10334, 'codeName': 'BSONObjectTooLarge'}
 pymongo.errors.DocumentTooLarge: BSON document too large (24656741 bytes) - the connected server supports BSON document sizes up to 16777216 bytes.
 
 
 
-Carbon_GAP_20																		under review (whether include both)				  	pending
+Carbon_GAP_20															under review (whether include both)				  	pending
 /large_data/new_raw_datasets/Carbon_GAP_20/Carbon_GAP_20
 Carbon_Data_Set_Total.xyz  Carbon_GAP_20_Training_Set.xyz
 config_type energy kpoints kpoints_density  virial cutoff nneightol force
@@ -101,7 +101,7 @@ config_type energy kpoints kpoints_density  virial cutoff nneightol force
 Amorphous_Bulk  Crystalline_RSS  
 
 
-ani-al																				under review (total configuration is weird)				pending	
+ani-al																under review (total configuration is weird)				pending
 /large_data/new_raw_datasets/ani-al/ani-al-master/data/data-12.h5
 /large_data/new_raw_datasets/ani-al/ani-al-master/readers/lib
 anidataloader
@@ -109,10 +109,10 @@ anidataloader
 
 check readerfunction :/colabfit/data/data/AL_Al/pyanitools.py											asking (fine)
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Azobenzene																			under review								pending
+Azobenzene																under review								pending
 /large_data/new_raw_datasets/sGDML/azobenzene.xyz
 
-Paracetamol																			under review								pending
+Paracetamol																under review								pending
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 MD22																				
@@ -145,21 +145,21 @@ md22_buckyball-catcher.xyz
 pymongo.errors.DocumentTooLarge: BSON document too large (18251850 bytes) - the connected server supports BSON document sizes up to 16777216 bytes.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Transition1x																	Killed	meta finished
+Transition1x															Killed	meta finished
 	/large_data/new_raw_datasets/Transition1x 
 	/large_data/new_raw_datasets/Transition1x/dataloader.py
 	Dataloader
 
 ANI1x
-	/large_data/new_raw_datasets/ANI1x													killed	meta finished
+	/large_data/new_raw_datasets/ANI1x									killed	meta finished
 
 
-ANI-1cxx																		meta about finished
+ANI-1cxx																meta about finished
 
 TypeError: unhashable type: 'numpy.ndarray'
 
 
-rmd17																			under review
+rmd17																	under review
 /large_data/new_raw_datasets/rmd17/rmd17/npz_data
 rmd17_malonaldehyde.npz  rmd17_paracetamol.npz  rmd17_salicylic.npz  rmd17_uracil.npz
 
@@ -177,14 +177,14 @@ pymongo.errors.OperationFailure: BSONObj size: 31405975 (0x1DF3797) is invalid. 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
  
 a-AlOx																		 finished						under review
-/large_data/new_raw_datasets_2.0/a-AlOx/train.xyz											41k training + 120 reference need to check
+/large_data/new_raw_datasets_2.0/a-AlOx/train.xyz							41k training + 120 reference need to check
 forces energy
 additional.xyz  train.xyz
 
 
 
-benzene, succinic acid, and glycine																				under review
-/large_data/new_raw_datasets_2.0/benzene_succinic_acid_glycine									finished
+benzene, succinic acid, and glycine																	under review
+/large_data/new_raw_datasets_2.0/benzene_succinic_acid_glycine						finished
 
 benzene_test_AIMS_PBE0_MBD.xyz
 benzene_train_FPS_AIMS_PBE0_MBD.xyz
@@ -211,7 +211,7 @@ succinic_acid_train_FPS_QE_PBE_TS.xyz
 succinic_acid_val_QE_PBE_TS.xyz
 
 
-Machine_Learning_Force_Fields														finished			under review
+Machine_Learning_Force_Fields										finished			under review
 /large_data/new_raw_datasets_2.0/Machine_Learning_Force_Fields/supplemental/qm_reference_datafiles
 
 /large_data/new_raw_datasets_2.0/Machine_Learning_Force_Fields/supplemental/qm_reference_datafiles/DatasetA
@@ -222,13 +222,13 @@ bcc_large.xyz  bulk_1250K.xyz  fcc_large.xyz
 /large_data/new_raw_datasets_2.0/Machine_Learning_Force_Fields/supplemental/qm_reference_datafiles/DatasetC
 
 
-HME21																	finished 			but shift energy	
+HME21														finished 			but shift energy
 /large_data/new_raw_datasets_2.0/HME21
 
 HME_2.0test.xyz  HME_2.0train.xyz  HME_2.0val.xyz  README  vasp_shift_energies.json
 
 
-Crystals																	metadata finished,  11489*6? 
+Crystals															metadata finished,  11489*6?
 
 /large_data/new_raw_datasets_2.0/Crystals/crystal_dataset.hdf5
 
@@ -248,7 +248,7 @@ Crystals																	metadata finished,  11489*6?
 
 
 
-OrbNet																	too large at this stage				meta not finished
+OrbNet													too large at this stage				meta not finished
 /large_data/new_raw_datasets_2.0/OrbNet_Denali/xyz_files/CHEMBL299825_conformers/1397e8c0348fb8c71a84225c47332c7026c9aaf909df469f7783f56eba80028e.xyz
 
 /large_data/new_raw_datasets_2.0/OrbNet_Denali/xyz_files/*/*.xyz
@@ -261,7 +261,7 @@ OrbNet																	too large at this stage				meta not finished
 
 
 
-Co_dimer																finished check meta			under review
+Co_dimer														finished check meta			under review
 /large_data/new_raw_datasets_2.0/Co_dimer/Co_dimer_data/Co_dimer_data.csv  Co_dimer_data_all.csv	
 
 /large_data/new_raw_datasets_2.0/Co_dimer/Co_dimer_data/structures_xyz
@@ -269,7 +269,7 @@ Co_dimer																finished check meta			under review
 
 
 ----------------------------------------------------------
-/alexander_ani-al.py   more properties											added, configuration slightly off		previous datasets
+/alexander_ani-al.py   more properties							added, configuration slightly off		previous datasets
 
 Jnames
 cell
@@ -280,11 +280,11 @@ force
 species
 -------------------------------------------------------
 
-BCC_Iron  Fe_22															different k-spacing-description		under review
+BCC_Iron  Fe_22												different k-spacing-description		under review
 use config name
 
 
-Silica																stress werid, stress units 			done
+Silica													stress werid, stress units 			done
 																    	waiting for the units 
 config_type
 virials
@@ -294,7 +294,7 @@ free_energy
 
 
 plantium															
-/large_data/new_raw_datasets_2.0/NP-DB/NP-DB01.xyz     NP-DB02.xyz						stress  unit?	local energy?			semi done		need to check if it's dft
+/large_data/new_raw_datasets_2.0/NP-DB/NP-DB01.xyz     NP-DB02.xyz		stress  unit?	local energy?			semi done		need to check if it's dft
 
 
 forces:R:3:local_energy 
@@ -365,7 +365,7 @@ virial
 energy
 
 
-Glycine Azobenzene flexible molecules												in progress     working on reformatting
+Glycine Azobenzene flexible molecules									in progress     working on reformatting
 /large_data/new_raw_datasets_2.0/flexible_molecules/Datasets/ Azobenzene_inversion.xyz  Azobenzene_rotation.xyz  Azobenzene_rotation_and_inversion.xyz  Glycine.xyz
 
 
@@ -375,12 +375,12 @@ methane																      in progress		script in gh
                                                                             BrokenPipeError: [Errno 32] Broken pipe)
 
 
-Coll																		in progress
-
+Coll																		in progress     script in gh
+                                                                        /large_data/new_raw_datasets_2.0/Coll  Coll_test.xyz  Coll_train.xyz  Coll_validation.xyz
 
 
 1000water		1645 row
-
+                                                                        /large_data/new_raw_datasets_2.0/Ice_Water  dataset_1000_eVAng.xyz
 
 
 BingqingCheng	bunch of datasets

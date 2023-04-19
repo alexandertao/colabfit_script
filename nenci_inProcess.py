@@ -9,8 +9,8 @@ client = MongoDatabase('new_data_test_alexander', configuration_type=AtomicConfi
 
 # Loads data, specify reader function if not "usual" file format
 configurations = load_data(
-    file_path='/large_data/new_raw_datasets_2.0/Silica/sio2_potential_data/database/dataset.scan.2.xyz',
-    file_format='xyz',
+    file_path='/large_data/new_raw_datasets_2.0/nenci2021/nenci2021/xyzfiles/',
+    file_format='folder',
     name_field='config_type',
     elements=['Si', 'O'],
     default_name='silica',
