@@ -12,7 +12,7 @@ client = MongoDatabase('new_data_test_alexander', configuration_type=AtomicConfi
 configurations = load_data(
     file_path='/large_data/new_raw_datasets_2.0/Silica/sio2_potential_data/database/dataset.scan.2.xyz',
     file_format='xyz',
-    name_field='config_type',
+    name_field=None,
     elements=['Si', 'O'],
     default_name='silica',
     verbose=True,
