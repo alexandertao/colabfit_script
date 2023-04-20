@@ -12,7 +12,7 @@ from ase import Atoms
 #drop_database=True means to start with fresh database
 client = MongoDatabase('new_data_test_alexander', configuration_type=AtomicConfiguration, nprocs=4, drop_database=True)
 
-
+#multiple properties
 # In[ ]:
 #solvated_protein-check out README in data's directory
 def reader_rmd(p):
@@ -25,13 +25,13 @@ def reader_rmd(p):
     f=a['forces']
     #d=a['D']
     #q=a['nuclear_charges']
-    for i in tqdm(range(len(r))):
+    for i in tqdm(range(len(na))):
         #n=na[i]
-        atom=Atoms(numbers=z,positions=r[i])
+        atom=Atoms(numbers=z[i,:n],positions=r[i,:n,:])
         #atom.info['energy']=e[i]
         atom.info['energy']=float(e[i])
         atom.arrays['forces']=f[i]
-        #atom.info['dipole_moment']=d[i]
+        atom.info['dipole_moment']=d[i]
         #atom.info['charge']=float(q[i])
         #print(atom.info['charge'])
         atoms.append(atom)
@@ -40,18 +40,19 @@ def reader_rmd(p):
     
  #Loads data, specify reader function if not "usual" file format
 configurations = load_data(
-    file_path='/large_data/new_raw_datasets/rmd17/rmd17/npz_data/',
+    file_path='/large_data/new_raw_datasets_2.0/WS22_database',
     file_format='folder',
     name_field=None,
     elements=['C','N','O','H'],
-    default_name='malonaldehyde',
+    default_name='ws22_acrolein',
     reader=reader_rmd,
-    glob_string='rmd17_malonaldehyde.npz',
+    glob_string='ws22_acrolein.npz',
     verbose=True,
     generator=False
 )
 
 
+'''
 configurations += load_data(
     file_path='/large_data/new_raw_datasets/rmd17/rmd17/npz_data/',
     file_format='folder',
@@ -76,7 +77,7 @@ configurations += load_data(
     verbose=True,
     generator=False
 )
-
+'''
 
 
 client.insert_property_definition('/home/ubuntu/notebooks/potential-energy.json')
@@ -100,7 +101,7 @@ property_map = {
     }],
 
     'atomic-forces': [{
-        'forces':   {'field': 'forces',  'units': 'kcal/mol*Ang'},
+        'forces':   {'field': 'forces',  'units': 'kcal/mol/A'},
         '_metadata': {
             'software': {'value':'ORCA 4.0.1'},
             'method':{'value':'PBE/def2-SVP'},
@@ -121,7 +122,6 @@ property_map = {
     }
 
 # In[ ]:
-
 
 def tform(c):
     c.info['per-atom'] = False
@@ -196,10 +196,10 @@ ds_id = client.insert_dataset(
     #cs_ids=cs_ids,
     do_hashes=all_dos,
     name='RMD17',
-    authors=['Anders S. Christensen', 'O. Anatole von Lilienfeld'],
+    authors=['Pinheiro Jr', 'M., Zhang', 'S., Dral', 'P. O.','Barbatti, M.'],
     links=[
-        'https://iopscience.iop.org/article/10.1088/2632-2153/abba6f',
-        'https://figshare.com/articles/dataset/Revised_MD17_dataset_rMD17_/12672038/2',
+        'https://www.nature.com/articles/s41597-023-01998-3#code-availability',
+        'https://zenodo.org/record/7032334#.ZEDJes7MJEY',
     ],
     description =  'For each of the 10 molecules in the MD17 dataset (aspirin, benzene, ethanol, '\
     'salicylic acid, malonaldehyde, toluene, naphthalene, uracil, paracetamol, and '\
@@ -208,6 +208,14 @@ ds_id = client.insert_dataset(
     'evaluation was carried out at the DFT level. All calculations were performed in '\
     'ORCA 4.0.1, using the PBE functional and the def2-SVP basis set with the '\
     'resolution-of-identity (RI) approximation for the Coulomb integrals.',
+'''
+The WS22 database combines Wigner sampling with geometry interpolation to generate 1.18 million molecular 
+geometries equally distributed into 10 independent datasets of flexible organic molecules with varying
+sizes and chemical complexity.
+In addition to the potential energy and forces required to construct potential energy surfaces, the WS22 
+database provides several other quantum chemical properties, all obtained via single-point calculations 
+for each molecular geometry. All quantum chemical calculations were performed with the Gaussian09 program.
+'''
     resync=True,
     verbose=True,
 

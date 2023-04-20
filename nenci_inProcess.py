@@ -9,15 +9,14 @@ client = MongoDatabase('new_data_test_alexander', configuration_type=AtomicConfi
 
 # Loads data, specify reader function if not "usual" file format
 configurations = load_data(
-    file_path='/large_data/new_raw_datasets_2.0/nenci2021/nenci2021/xyzfiles/',
-    file_format='folder',
-    name_field='config_type',
-    elements=['Si', 'O'],
-    default_name='silica',
+    file_path='/large_data/new_raw_datasets_2.0/nenci2021/nenci2021/xyzfiles/reformat/141_Cl-pyridine_A_z_-30_1.10_reformat.xyz',
+    file_format='xyz',
+    name_field=None,
+    elements=['H','C', 'N', 'O', 'F', 'S', 'P', 'Cl', 'Br'],
+    default_name='nanci',
     verbose=True,
     generator=False
 )
-
 '''
 configurations += load_data(
     file_path='/colabfit/data/data/gubaev/AlNiTi/train_2nd_stage.cfg',
@@ -28,19 +27,19 @@ configurations += load_data(
     verbose=True,
     generator=False
 )
-'''
+
 cs_list = set()
 for c in configurations:
     cs_list.add(*c.info['_name'])
 print(cs_list)
-
+'''
 # In[ ]:
 
 
-# client.insert_property_definition('/home/ubuntu/notebooks/potential-energy.json')
-# client.insert_property_definition('/home/ubuntu/notebooks/atomic-forces.json')
-client.insert_property_definition('/home/ubuntu/notebooks/cauchy-stress.json')
-
+client.insert_property_definition('/home/ubuntu/notebooks/potential-energy.json')
+#client.insert_property_definition('/home/ubuntu/notebooks/atomic-forces.json')
+#client.insert_property_definition('/home/ubuntu/notebooks/cauchy-stress.json')
+'''
 free_property_definition = {
     'property-id': 'free-energy',
     'property-name': 'free-energy',
@@ -50,28 +49,28 @@ free_property_definition = {
                'description': 'enthalpy of formation'}}
 
 client.insert_property_definition(free_property_definition)
-
+'''
 
 property_map = {
-    #    'potential-energy': [{
-    #        'energy':   {'field': 'energy',  'units': 'eV'},
-    #        'per-atom': {'field': 'per-atom', 'units': None},
-    # For metadata want: software, method (DFT-XC Functional), basis information, more generic parameters
-    #        '_metadata': {
-    #            'software': {'value':'GPAW and VASP'},
-    #            'method':{'value':'DFT'},
-    #            'ecut':{'value':'700 eV for GPAW, 900 eV for VASP'},
-    #        }
-    #    }],
+        'potential-energy': [{
+            'energy':   {'field': 'energy',  'units': 'kcal/mol'},
+            'per-atom': {'field': 'per-atom', 'units': None},
+     #For metadata want: software, method (DFT-XC Functional), basis information, more generic parameters
+            '_metadata': {
+                #'software': {'value':'GPAW and VASP'},
+                'method':{'value':'CCSD(T)/CBS'},
+                #'ecut':{'value':'700 eV for GPAW, 900 eV for VASP'},
+            }
+        }],
 
-    'free-energy': [{
-        'energy': {'field': 'free_energy', 'units': 'eV'},
-        '_metadata': {
-            'software': {'value': 'GPAW and VASP'},
-            'method': {'value': 'DFT'},
-            'ecut':{'value':'700 eV for GPAW, 900 eV for VASP'},
-        }
-    }],
+#    'free-energy': [{
+#        'energy': {'field': 'free_energy', 'units': 'eV'},
+#        '_metadata': {
+#            'software': {'value': 'GPAW and VASP'},
+#            'method': {'value': 'DFT'},
+#            'ecut':{'value':'700 eV for GPAW, 900 eV for VASP'},
+#        }
+#    }],
 
 
 #    'atomic-forces': [{
@@ -81,18 +80,19 @@ property_map = {
 #        }
 #    }],
 
-    'cauchy-stress': [{
-        'stress':   {'field': 'virials',  'units': 'GPa'}, #need to check unit for stress
 
-        '_metadata': {
-            'software': {'value':'GPAW and VASP'},
-            'method':{'value':'DFT'},
-            'ecut':{'value':'700 eV for GPAW, 900 eV for VASP'},
-        }
-
-    }],
-
-}
+#     'cauchy-stress': [{
+#         'stress':   {'field': 'virials',  'units': 'GPa'}, #need to check unit for stress
+#
+#         '_metadata': {
+#             'software': {'value':'GPAW and VASP'},
+#             'method':{'value':'DFT'},
+#             'ecut':{'value':'700 eV for GPAW, 900 eV for VASP'},
+#         }
+#
+#     }],
+#
+# }
 
 def tform(c):
     c.info['per-atom'] = False
@@ -107,6 +107,7 @@ ids = list(client.insert_data(
 
 all_co_ids, all_pr_ids = list(zip(*ids))
 
+'''
 #matches to data CO "name" field
 cs_regexes = {
     '.*':
@@ -122,11 +123,11 @@ for i in cs_list:
     cs_names.append(i)
 
 #print (cs_regexes)
-
+'''
 
 cs_ids = []
 
-
+'''
 for i, (regex, desc) in enumerate(cs_regexes.items()):
     co_ids = client.get_data(
         'configurations',
@@ -140,24 +141,20 @@ for i, (regex, desc) in enumerate(cs_regexes.items()):
     cs_id = client.insert_configuration_set(co_ids, description=desc,name=cs_names[i])
 
     cs_ids.append(cs_id)
-
+'''
 
 ds_id = client.insert_dataset(
     cs_ids=cs_ids,
-    pr_hashes=all_pr_ids,
-    name='silica_nature2022',
+    do_hashes=all_pr_ids,
+    name='NENCI-2021',
     authors=[
-        'Erhard, Linus C', 'Rohrer, Jochen', 'Albe, Karsten', 'Deringer, Volker L'
+        'Zachary M. Sparrow','Brian G. Ernst','Paul T. Joo','Ka Un Lao' ,'Robert A. DiStasio, Jr.'
     ],
     links=[
-        'https://www.nature.com/articles/s41524-022-00768-w#Sec8',
-        'https://zenodo.org/record/6353684#.Y_Ruwx_MJEY',
+        'https://pubs.aip.org/aip/jcp/article/155/18/184303/199609/NENCI-2021-I-A-large-benchmark-database-of-non',
     ],
-    description ='Silica datasets. For DFT computations, the GPAW (in combination with ASE) and VASP codes employing '\
-                 'the projector augmented-wave method were used. Early versions of the GAP were based '\
-                 'on reference data computed using the PBEsol functional. For GPAW, an energy cut-off '\
-                 'of 700 eV and a k-spacing of 0.279 Å−1 were used, for VASP, a higher energy cut-off '\
-                 'of 900 eV and a denser k-spacing of 0.23 Å−1 were used.',
+    description ='A single file containing the Cartesian coordinates of the 7763 intermolecular complexes in NENCI-2021 '\
+                 '(in xyz format) and a csv file containing all the CCSD(T)/CBS and SAPT energetic components (in kcal/mol) are provided',
     resync=True,
     verbose=True,
 )
