@@ -63,26 +63,27 @@ ids = list(client.insert_data(
 
 all_co_ids, all_pr_ids = list(zip(*ids))
 
-'''
+
 #matches to data CO "name" field
 cs_regexes = {
-    '.*':
-        'Silica datasets. For DFT computations, the GPAW (in combination with ASE) and VASP codes employing '\
-        'the projector augmented-wave method were used. Early versions of the GAP were based '\
-        'on reference data computed using the PBEsol functional. For GPAW, an energy cut-off '\
-        'of 700 eV and a k-spacing of 0.279 Å−1 were used, for VASP, a higher energy cut-off '\
-        'of 900 eV and a denser k-spacing of 0.23 Å−1 were used.',
+#    '.*':
+#        'Silica datasets. For DFT computations, the GPAW (in combination with ASE) and VASP codes employing '\
+#        'the projector augmented-wave method were used. Early versions of the GAP were based '\
+#        'on reference data computed using the PBEsol functional. For GPAW, an energy cut-off '\
+#        'of 700 eV and a k-spacing of 0.279 Å−1 were used, for VASP, a higher energy cut-off '\
+#        'of 900 eV and a denser k-spacing of 0.23 Å−1 were used.',
         }
+'''
 cs_names=['all']
 for i in cs_list:
     cs_regexes[i]='Configurations with the %s structure.' %i
     cs_names.append(i)
-
-#print (cs_regexes)
 '''
+#print (cs_regexes)
+
 
 cs_ids = []
-'''
+
 for i, (regex, desc) in enumerate(cs_regexes.items()):
     co_ids = client.get_data(
         'configurations',
@@ -96,7 +97,7 @@ for i, (regex, desc) in enumerate(cs_regexes.items()):
     cs_id = client.insert_configuration_set(co_ids, description=desc,name=cs_names[i])
 
     cs_ids.append(cs_id)
-'''
+
 
 ds_id = client.insert_dataset(
     cs_ids=cs_ids,
