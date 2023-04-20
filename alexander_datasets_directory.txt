@@ -332,6 +332,7 @@ nenci2021																	downloaded it, working on ingestion. done a slice of s
 The comment line (line 2) for each .xyz file contains the following quantities in order, with energies reported in kcal/mol:
 Dimer charge, Dimer multiplicity, Momomer A charge, Monomer A multiplicity, Momomer B charge, Monomer B multiplicity, # of atoms in Monomer A,
 # of atoms in Monomer B, CCSD(T)/CBS,   CCSD(T)/haTZ,   MP2/haTZ,   MP2/CBS,   MP2/aTZ,   MP2/aQZ,   HF/haTZ,   HF/aTZ,   HF/aQZ,   SAPT2+/aDZ Tot,
+
 SAPT2+/aDZ Elst,   SAPT2+/aDZ Exch,   SAPT2+/aDZ Ind,   SAPT2+/aDZ Disp
 
 python reformatxyz.py
@@ -372,7 +373,7 @@ virial
 energy
 
 
-Glycine Azobenzene flexible molecules									in progress     reformat finished
+Glycine Azobenzene flexible molecules									in progress     reformat finished  include all
 /large_data/new_raw_datasets_2.0/flexible_molecules/Datasets/ Azobenzene_inversion.xyz  Azobenzene_rotation.xyz  Azobenzene_rotation_and_inversion.xyz  Glycine.xyz
 
 
