@@ -365,7 +365,7 @@ CONF 	(120000, 1) 	String identifier of conformations
 
 
 
-Iron Fe nanoparticles															in progress on server   still need metadata  no operation to execute
+Iron Fe nanoparticles															in progress on server   finished, unit for stress unclear
 /large_data/new_raw_datasets_2.0/Iron_nanoparticle/convex_hull.xyz
 magnetic_moments
 forces
