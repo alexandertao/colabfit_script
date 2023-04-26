@@ -373,7 +373,7 @@ virial
 energy
 
 
-Glycine Azobenzene flexible molecules									in progress     reformat finished  include all
+Glycine Azobenzene flexible molecules									in progress     no operation to execute
 /large_data/new_raw_datasets_2.0/flexible_molecules/Datasets/ Azobenzene_inversion.xyz  Azobenzene_rotation.xyz  Azobenzene_rotation_and_inversion.xyz  Glycine.xyz
 
 
