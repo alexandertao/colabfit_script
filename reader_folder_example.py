@@ -147,3 +147,41 @@ ds_id = client.insert_dataset(
     resync=True,
     verbose=True,
 )
+
+
+
+cs_info = [
+
+    {"name":"Ac-Ala3-NHMe",
+    "description": "Configurations with Ac-Ala3-NHMe structure(C12H22N4O4)"},
+
+    {"name": "double-walled_nanotube",
+    "description": "Configurations with double walled nanotube structure(C326H44)"},
+
+    {"name": "DHA",
+    "description": "Configurations with DHA Docosahexaenoic acid structure(C22H32O2)"},
+
+    {"name": "stachyose",
+    "description": "Configurations with stachyose structure (C24H42O21)"},
+
+    {"name": "AT-AT",
+    "description": "Configurations with DNA base pair AT-AT structure (C20H22N14O4)"},
+
+    {"name":"AT-AT-CG-CG",
+    "description": "Configurations with DNA base pair AT-AT-CG-CG structure (C38H42N30O8)"},
+
+    {"name": "buckyball-catcher",
+    "description": "Configurations with buckyball-catcher structure(C120H28)"},
+]
+
+cs_ids = []
+
+for i in cs_info:
+    cs_id = client.query_and_insert_configuration_set(
+        co_hashes=all_cos,
+        query={'names':{'$regex':i['name']+'_*'}},
+        name=i['name'],
+        description=i['description']
+    )
+
+    cs_ids.append(cs_id)

@@ -120,43 +120,37 @@ ids = list(client.insert_data(
 ))
 
 all_co_ids, all_pr_ids = list(zip(*ids))
-'''
-#matches to data CO "name" field
-cs_regexes = {
-    '.*':
-        'Silica datasets. For DFT computations, the GPAW (in combination with ASE) and VASP codes employing '\
-        'the projector augmented-wave method were used. Early versions of the GAP were based '\
-        'on reference data computed using the PBEsol functional. For GPAW, an energy cut-off '\
-        'of 700 eV and a k-spacing of 0.279 Å−1 were used, for VASP, a higher energy cut-off '\
-        'of 900 eV and a denser k-spacing of 0.23 Å−1 were used.',
-        }
-cs_names=['all']
-for i in cs_list:
-    cs_regexes[i]='Configurations with the %s structure.' %i
-    cs_names.append(i)
-#print (cs_regexes)
 
+cs_info = [
+
+    {"name":"Azobenzene_inversion",
+    "description": "Configurations with Azobenzene inversion structure"},
+
+    {"name": "Azobenzene_rotation_and_inversion",
+    "description": "Configurations with Azobenzene rotation and inversion structure"},
+
+    {"name": "Azobenzene_rotation",
+    "description": "Configurations with Azobenzene rotation structure"},
+
+    {"name": "Glycine",
+    "description": "Configurations with Glycine structure"},
+
+]
 
 cs_ids = []
 
-
-for i, (regex, desc) in enumerate(cs_regexes.items()):
-    co_ids = client.get_data(
-        'configurations',
-        fields='hash',
-        query={'hash': {'$in': all_co_ids}, 'names': {'$regex': regex}},
-        ravel=True
-    ).tolist()
-
-    print(f'Configuration set {i}', f'({regex}):'.rjust(22), f'{len(co_ids)}'.rjust(7))
-
-    cs_id = client.insert_configuration_set(co_ids, description=desc,name=cs_names[i])
+for i in cs_info:
+    cs_id = client.query_and_insert_configuration_set(
+        co_hashes=all_cos,
+        query={'names':{'$regex':i['name']+'_*'}},
+        name=i['name'],
+        description=i['description']
+    )
 
     cs_ids.append(cs_id)
-'''
 
 ds_id = client.insert_dataset(
-    #cs_ids=cs_ids,
+    cs_ids=cs_ids,
     do_hashes=all_pr_ids,
     name='flexible_molecules_JCP2021',
     authors=[
