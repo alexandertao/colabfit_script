@@ -1,8 +1,10 @@
 import sys
 def reformat(file_name):
     do=True
-    nf=open(file_name+'_reformat','w')
-    with open(file_name,'r') as f:
+    a = file_address.split['.']
+    b = a[0] + '_reformat.' + a[1]
+    nf=open(b,'w')
+    with open(file_address,'r') as f:
         while do:
                 try:
                     n=int(f.readline())
