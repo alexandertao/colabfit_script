@@ -15,7 +15,7 @@ configurations = load_data(
     file_format='xyz',
     name_field=None,
     elements=['C', 'N', 'H', 'O'],
-    default_name='Azobenzene_inversion_reformat',
+    default_name='Azobenzene_inversion',
     verbose=True,
     generator=False
 )
@@ -25,7 +25,7 @@ configurations = load_data(
     file_format='xyz',
     name_field=None,
     elements=['C', 'N', 'H', 'O'],
-    default_name='Azobenzene_rotation_and_inversion_reformat',
+    default_name='Azobenzene_rotation_and_inversion',
     verbose=True,
     generator=False
 )
@@ -35,7 +35,7 @@ configurations = load_data(
     file_format='xyz',
     name_field=None,
     elements=['C', 'N', 'H', 'O'],
-    default_name='Azobenzene_rotation_reformat',
+    default_name='Azobenzene_rotation',
     verbose=True,
     generator=False
 )
@@ -45,7 +45,7 @@ configurations = load_data(
     file_format='xyz',
     name_field=None,
     elements=['C', 'N', 'H', 'O'],
-    default_name='Glycine_reformat',
+    default_name='Glycine',
     verbose=True,
     generator=False
 )
@@ -123,16 +123,16 @@ all_cos, all_dos = list(zip(*ids))
 
 cs_info = [
 
-    {"name":"Azobenzene_inversion_reformat",
+    {"name":"Azobenzene_inversion",
     "description": "Configurations with Azobenzene inversion structure"},
 
-    {"name": "Azobenzene_rotation_and_inversion_reformat",
+    {"name": "Azobenzene_rotation_and_inversiont",
     "description": "Configurations with Azobenzene rotation and inversion structure"},
 
-    {"name": "Azobenzene_rotation_reformat",
+    {"name": "Azobenzene_rotation",
     "description": "Configurations with Azobenzene rotation structure"},
 
-    {"name": "Glycine_reformat",
+    {"name": "Glycine",
     "description": "Configurations with Glycine structure"},
 
 ]
