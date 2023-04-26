@@ -1,8 +1,8 @@
 import sys
 def reformat(file_name):
     do=True
-    nf=open('141_Cl-pyridine_A_z_-30_1.10_reformat.xyz','w')
-    with open('141_Cl-pyridine_A_z_-30_1.10.xyz','r') as f:
+    nf=open(file_name+'_reformat','w')
+    with open(file_name,'r') as f:
         while do:
                 try:
                     n=int(f.readline())
