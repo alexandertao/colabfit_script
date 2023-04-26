@@ -1,19 +1,26 @@
 from colabfit.tools.database import MongoDatabase, load_data
 from colabfit.tools.property_settings import PropertySettings
 from colabfit.tools.configuration import AtomicConfiguration
-
+import ase
 # call database using its name
 # drop_database=True means to start with fresh database
 client = MongoDatabase('new_data_test_alexander', configuration_type=AtomicConfiguration, nprocs=4, drop_database=True)
 
 
 # Loads data, specify reader function if not "usual" file format
+
+def reader(file_path):
+    file_name=file_path.stem
+    atom=ase.io.read(file_path)
+    atom.info['name'] = file_name
+    yield atom
+
 configurations = load_data(
     file_path='/large_data/new_raw_datasets_2.0/flexible_molecules/Datasets/Datasets',
     file_format='folder',
-    name_field=None,
-    elements=['C', 'N', 'H'],
-    default_name='silica',
+    name_field='name',
+    elements=['C', 'N', 'H', 'O'],
+    default_name='flexiblemolecules',
     verbose=True,
     generator=False
 )
@@ -101,13 +108,12 @@ cs_names=['all']
 for i in cs_list:
     cs_regexes[i]='Configurations with the %s structure.' %i
     cs_names.append(i)
-'''
 #print (cs_regexes)
 
 
 cs_ids = []
 
-'''
+
 for i, (regex, desc) in enumerate(cs_regexes.items()):
     co_ids = client.get_data(
         'configurations',
@@ -124,7 +130,7 @@ for i, (regex, desc) in enumerate(cs_regexes.items()):
 '''
 
 ds_id = client.insert_dataset(
-    cs_ids=cs_ids,
+    #cs_ids=cs_ids,
     do_hashes=all_pr_ids,
     name='flexible_molecules_JCP2021',
     authors=[
