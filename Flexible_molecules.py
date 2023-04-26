@@ -9,7 +9,7 @@ client = MongoDatabase('new_data_test_alexander', configuration_type=AtomicConfi
 
 # Loads data, specify reader function if not "usual" file format
 configurations = load_data(
-    file_path='/large_data/new_raw_datasets_2.0/flexible_molecules/Datasets/',
+    file_path='/large_data/new_raw_datasets_2.0/flexible_molecules/Datasets/Datasets',
     file_format='folder',
     name_field=None,
     elements=['C', 'N', 'H'],
@@ -19,15 +19,7 @@ configurations = load_data(
 )
 
 '''
-configurations += load_data(
-    file_path='/colabfit/data/data/gubaev/AlNiTi/train_2nd_stage.cfg',
-    file_format='cfg',
-    name_field=None,
-    elements=['Al', 'Ni', 'Ti'],
-    default_name='train_2nd_stage',
-    verbose=True,
-    generator=False
-)
+
 
 cs_list = set()
 for c in configurations:
@@ -39,7 +31,7 @@ print(cs_list)
 client.insert_property_definition('/home/ubuntu/notebooks/potential-energy.json')
 # client.insert_property_definition('/home/ubuntu/notebooks/atomic-forces.json')
 #client.insert_property_definition('/home/ubuntu/notebooks/cauchy-stress.json')
-
+'''
 free_property_definition = {
     'property-id': 'free-energy',
     'property-name': 'free-energy',
@@ -49,29 +41,19 @@ free_property_definition = {
                'description': 'enthalpy of formation'}}
 
 client.insert_property_definition(free_property_definition)
-
+'''
 
 property_map = {
-    #    'potential-energy': [{
-    #        'energy':   {'field': 'energy',  'units': 'eV'},
-    #        'per-atom': {'field': 'per-atom', 'units': None},
-    # For metadata want: software, method (DFT-XC Functional), basis information, more generic parameters
-    #        '_metadata': {
-    #            'software': {'value':'GPAW and VASP'},
-    #            'method':{'value':'DFT'},
-    #            'ecut':{'value':'700 eV for GPAW, 900 eV for VASP'},
-    #        }
-    #    }],
-
-    'free-energy': [{
-        'energy': {'field': 'free_energy', 'units': 'eV'},
-        '_metadata': {
-            'software': {'value': 'GPAW and VASP'},
-            'method': {'value': 'DFT'},
-            'ecut':{'value':'700 eV for GPAW, 900 eV for VASP'},
-        }
-    }],
-
+        'potential-energy': [{
+            'energy':   {'field': 'energy',  'units': 'Kcal/Mol'},
+            'per-atom': {'field': 'per-atom', 'units': None},
+     #For metadata want: software, method (DFT-XC Functional), basis information, more generic parameters
+            '_metadata': {
+                'software': {'value':'FHI-aims'},
+                'method':{'value':'DFT-PBE'},
+                #'ecut':{'value':'700 eV for GPAW, 900 eV for VASP'},
+            }
+        }],
 
 #    'atomic-forces': [{
 #        'forces':   {'field': 'forces',  'units': 'eV/Ang'},
@@ -80,16 +62,16 @@ property_map = {
 #        }
 #    }],
 
-    'cauchy-stress': [{
-        'stress':   {'field': 'virials',  'units': 'GPa'}, #need to check unit for stress
-
-        '_metadata': {
-            'software': {'value':'GPAW and VASP'},
-            'method':{'value':'DFT'},
-            'ecut':{'value':'700 eV for GPAW, 900 eV for VASP'},
-        }
-
-    }],
+#     'cauchy-stress': [{
+#         'stress':   {'field': 'virials',  'units': 'GPa'}, #need to check unit for stress
+#
+#         '_metadata': {
+#             'software': {'value':'GPAW and VASP'},
+#             'method':{'value':'DFT'},
+#             'ecut':{'value':'700 eV for GPAW, 900 eV for VASP'},
+#         }
+#
+#}],
 
 }
 
@@ -144,20 +126,16 @@ for i, (regex, desc) in enumerate(cs_regexes.items()):
 ds_id = client.insert_dataset(
     cs_ids=cs_ids,
     do_hashes=all_pr_ids,
-    name='silica_nature2022',
+    name='flexible_molecules_JCP2021',
     authors=[
-        'Erhard, Linus C', 'Rohrer, Jochen', 'Albe, Karsten', 'Deringer, Volker L'
+        'Valentin Vassilev-Galindo', 'Gregory Fonseca', 'Igor Poltavsky', 'Alexandre Tkatchenko'
     ],
     links=[
         'https://pubs.aip.org/aip/jcp/article/154/9/094119/313847/Challenges-for-machine-learning-force-fields-in',
     ],
-    description ='Silica datasets. For DFT computations, the GPAW (in combination with ASE) and VASP codes employing '\
-                 'the projector augmented-wave method were used. Early versions of the GAP were based '\
-                 'on reference data computed using the PBEsol functional. For GPAW, an energy cut-off '\
-                 'of 700 eV and a k-spacing of 0.279 Å−1 were used, for VASP, a higher energy cut-off '\
-                 'of 900 eV and a denser k-spacing of 0.23 Å−1 were used.',
-
-
+    description='All calculations were performed in FHI-aims software using the Perdew–Burke–Ernzerhof (PBE) '\
+                'exchange–correlation functional with tight settings and the Tkatchenko–Scheffler (TS) method to '\
+                'account for van der Waals (vdW) interactions.',
     resync=True,
     verbose=True,
 )
