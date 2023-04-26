@@ -185,3 +185,28 @@ for i in cs_info:
     )
 
     cs_ids.append(cs_id)
+
+
+ds_id = client.insert_dataset(
+    do_hashes=all_dos,
+    cs_ids=cs_ids,
+    #pr_hashes=all_pr_ids,
+    name='MD22',
+    authors=[
+        'Stefan Chmiela', 'Valentin Vassilev-Galindo', 'Oliver T. Unke', 'Adil Kabylda', 'Huziel E. Sauceda', 'Alexandre Tkatchenko', 'Klaus-Robert Müller'],
+    links=[
+        'https://www.science.org/doi/10.1126/sciadv.adf0873',
+        'http://sgdml.org/',
+    ],
+    description =  'MD22 includes examples of four major '\
+    'classes of biomolecules and supramolecules, ranging from '\
+    'a small peptide with 42 atoms, all the way up to a double-walled '\
+    'nanotube with 370 atoms. The trajectories were sampled at temperatures '\
+    'between 400 K and 500 K at a resolution of 1 fs. All calculation were '\
+    'performed using the FHI-aims electronic structure software, in '\
+    'combination with i-PI for the MD simulations. The potential energy and '\
+    'atomic force labels were calculated at the PBE+MBD level of theory. The '\
+    'keywords light and tight denote different basis set options in FHI-aims.',
+    resync=True,
+    verbose=True,
+)

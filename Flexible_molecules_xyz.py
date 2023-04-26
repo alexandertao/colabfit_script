@@ -11,11 +11,11 @@ client = MongoDatabase('new_data_test_alexander', configuration_type=AtomicConfi
 
 
 configurations = load_data(
-    file_path='/large_data/new_raw_datasets_2.0/flexible_molecules/Datasets/Datasets/Azobenzene_inversion_reformat.xyz',
+    file_path='/large_data/new_raw_datasets_2.0/flexible_molecules/Datasets/Datasets/Azobenzene_inversion_reformatAzobenzene_inversion_reformat.xyz',
     file_format='xyz',
     name_field=None,
     elements=['C', 'N', 'H', 'O'],
-    default_name='Azobenzene_inversion',
+    default_name='Azobenzene_inversion_reformat',
     verbose=True,
     generator=False
 )
@@ -25,7 +25,7 @@ configurations = load_data(
     file_format='xyz',
     name_field=None,
     elements=['C', 'N', 'H', 'O'],
-    default_name='Azobenzene_rotation_and_inversion',
+    default_name='Azobenzene_rotation_and_inversion_reformat',
     verbose=True,
     generator=False
 )
@@ -35,7 +35,7 @@ configurations = load_data(
     file_format='xyz',
     name_field=None,
     elements=['C', 'N', 'H', 'O'],
-    default_name='Azobenzene_rotation',
+    default_name='Azobenzene_rotation_reformat',
     verbose=True,
     generator=False
 )
@@ -45,7 +45,7 @@ configurations = load_data(
     file_format='xyz',
     name_field=None,
     elements=['C', 'N', 'H', 'O'],
-    default_name='Glycine',
+    default_name='Glycine_reformat',
     verbose=True,
     generator=False
 )
@@ -119,20 +119,20 @@ ids = list(client.insert_data(
     verbose=True
 ))
 
-all_co_ids, all_pr_ids = list(zip(*ids))
+all_cos, all_dos = list(zip(*ids))
 
 cs_info = [
 
-    {"name":"Azobenzene_inversion",
+    {"name":"Azobenzene_inversion_reformat",
     "description": "Configurations with Azobenzene inversion structure"},
 
-    {"name": "Azobenzene_rotation_and_inversion",
+    {"name": "Azobenzene_rotation_and_inversion_reformat",
     "description": "Configurations with Azobenzene rotation and inversion structure"},
 
-    {"name": "Azobenzene_rotation",
+    {"name": "Azobenzene_rotation_reformat",
     "description": "Configurations with Azobenzene rotation structure"},
 
-    {"name": "Glycine",
+    {"name": "Glycine_reformat",
     "description": "Configurations with Glycine structure"},
 
 ]
