@@ -1,7 +1,7 @@
 from colabfit.tools.database import MongoDatabase, load_data
 from colabfit.tools.property_settings import PropertySettings
 from colabfit.tools.configuration import AtomicConfiguration
-import ase
+
 # call database using its name
 # drop_database=True means to start with fresh database
 client = MongoDatabase('new_data_test_alexander', configuration_type=AtomicConfiguration, nprocs=4, drop_database=True)
