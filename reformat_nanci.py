@@ -23,7 +23,7 @@ def reformat(file_name):
                     #print(cell)
                     #f.readline()
                     nf.write('%s\n' %n)
-                    nf.write('CCSD(T)/CBS=%s CCSD(T)/haTZ=%s Properties=species:S:1:pos:R:3\n' %(data[16],data[18]))
+                    nf.write('CCSD(T)/CBS=%s CCSD(T)/haTZ=%s MP2/haTZ=%s MP2/CBS=%s MP2/aTZ=%s MP2/aQZ=%s HF/haTZ=%s HF/aTZ=%s HF/aQZ=%s SAPT2+/aDZTot=%s Properties=species:S:1:pos:R:3\n' %(data[16],data[18],data[20],data[22],data[24],data[26],data[28],data[30],data[32],data[34]))
                     nf.write(atoms)
                     #nf.write('\n')
                     #print (n)
