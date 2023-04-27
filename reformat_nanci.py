@@ -36,5 +36,7 @@ import os
 current_address = os.path.dirname(os.path.abspath(__file__))
 file_list = os.listdir(current_address)
 for file_address in file_list:
-    #a = file_address.split['.']
-    #print (a)
+    if file_address != 'reformat_nanci.py'
+        reformat(file_list)
+        #a = file_address.split['.']
+        #print (a)
