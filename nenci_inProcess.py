@@ -1,7 +1,7 @@
 from colabfit.tools.database import MongoDatabase, load_data
 from colabfit.tools.property_settings import PropertySettings
 from colabfit.tools.configuration import AtomicConfiguration
-
+import ase
 # call database using its name
 # drop_database=True means to start with fresh database
 client = MongoDatabase('new_data_test_alexander', configuration_type=AtomicConfiguration, nprocs=4, drop_database=True)
@@ -18,9 +18,9 @@ configurations = load_data(
     file_path='/large_data/new_raw_datasets_2.0/nenci2021/nenci2021/xyzfiles/',
     file_format='folder',
     name_field='name',
-    elements=['H','C', 'N', 'O', 'F', 'S', 'P', 'Cl', 'Br'],
+    elements=['C','H','N','O','F','Cl','Br','S','P'],
     reader=reader,
-    glob_string='*reformat.xyz'
+    glob_string='*reformat.xyz',
     #default_name='nanci',
     verbose=True,
     generator=False
@@ -42,7 +42,7 @@ free_property_definition = {
 
 client.insert_property_definition(free_property_definition)
 '''
-
+#still need to add more properties
 property_map = {
         'potential-energy': [{
             'energy':   {'field': 'CCSD(T)/CBS',  'units': 'kcal/mol'},
@@ -84,7 +84,7 @@ property_map = {
 #
 #     }],
 #
-# }
+ }
 
 def tform(c):
     c.info['per-atom'] = False
@@ -99,7 +99,7 @@ ids = list(client.insert_data(
 
 all_co_ids, all_pr_ids = list(zip(*ids))
 
-
+#more cs_info to be updated
 cs_info = [
 
     {"name":"Water",
