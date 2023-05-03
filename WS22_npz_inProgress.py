@@ -98,7 +98,7 @@ property_map = {
 # For metadata want: software, method (DFT-XC Functional), basis information, more generic parameters
         '_metadata': {
             'software': {'value':'ORCA 4.0.1'},
-            'method':{'value':'PBE/def2-SVP'},
+            'method':{'value':'PBE0/6-311G*'},
         }
     }],
 
@@ -106,7 +106,7 @@ property_map = {
         'forces':   {'field': 'forces',  'units': 'kcal/mol/A'},
         '_metadata': {
             'software': {'value':'ORCA 4.0.1'},
-            'method':{'value':'PBE/def2-SVP'},
+            'method':{'value':'PBE0/6-311G*'},
 
         }
 
@@ -204,7 +204,7 @@ ds_id = client.insert_dataset(
         'https://www.nature.com/articles/s41597-023-01998-3#code-availability',
         'https://zenodo.org/record/7032334#.ZEDJes7MJEY',
     ],
-    description =  'The WS22 database combines Wigner sampling with geometry interpolation to generate 1.18 '\
+    description ='The WS22 database combines Wigner sampling with geometry interpolation to generate 1.18 '\
     'million molecular geometries equally distributed into 10 independent datasets of flexible '\
     'organic molecules with varying sizes and chemical complexity. '\
     'In addition to the potential energy and forces required to construct potential energy surfaces, the WS22 '\
