@@ -248,7 +248,7 @@ Crystals															metadata finished,  11489*6?
 
 
 
-OrbNet													too large at this stage				meta not finished
+OrbNet													               under review
 /large_data/new_raw_datasets_2.0/OrbNet_Denali/xyz_files/CHEMBL299825_conformers/1397e8c0348fb8c71a84225c47332c7026c9aaf909df469f7783f56eba80028e.xyz
 
 /large_data/new_raw_datasets_2.0/OrbNet_Denali/xyz_files/*/*.xyz
@@ -342,7 +342,7 @@ python reformatxyz.py
 /large_data/new_raw_datasets_2.0/nenci2021/nenci2021/xyzfiles/reformat/141_Cl-pyridine_A_z_-30_1.10_reformat.xyz
 
 
-WS22																		in progress     still need the reader function
+WS22																	 need to modify the reader function, meta finished
 
 /large_data/new_raw_datasets_2.0/WS22_database
 
@@ -365,7 +365,7 @@ CONF 	(120000, 1) 	String identifier of conformations
 
 
 
-Iron Fe nanoparticles															in progress on server   finished, unit for stress unclear
+Iron Fe nanoparticles												   finished, unit for stress unclear
 /large_data/new_raw_datasets_2.0/Iron_nanoparticle/convex_hull.xyz
 magnetic_moments
 forces
@@ -387,6 +387,10 @@ methane																      in progress		script in gh
 Coll																		in progress     script in gh
 /large_data/new_raw_datasets_2.0/Coll  Coll_test.xyz  Coll_train.xyz  Coll_validation.xyz
 energy atomization_energy
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+
 
 
 1000water		1645 row
