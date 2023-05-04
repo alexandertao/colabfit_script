@@ -350,7 +350,7 @@ WS22																	 need to modify the reader function, meta finished
 /large_data/new_raw_datasets_2.0/WS22_database
 
  README.md                      'ws22_dmabn.npz?download=1'        'ws22_sma.npz?download=1'      'ws22_urea.npz?download=1'
-'ws22_acrolein.npz?download=1'  'ws22_nitrophenol.npz?download=1'  'ws22_thymine.npz?download=1'  'ws22_urocanic.npz?download=1'
+'ws22_acrolein.npz'  'ws22_nitrophenol.npz?download=1'  'ws22_thymine.npz?download=1'  'ws22_urocanic.npz?download=1'
 'ws22_alanine.npz?download=1'   'ws22_o-hbdi.npz?download=1'       'ws22_toluene.npz?download=1'
 
 Z 	(n_atoms, ) 	Atomic numbers of nuclei 	
