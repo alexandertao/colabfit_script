@@ -1,8 +1,7 @@
 from colabfit.tools.database import MongoDatabase, load_data
 from colabfit.tools.property_settings import PropertySettings
 from colabfit.tools.configuration import AtomicConfiguration
-#from cfkit.database import MongoDatabase, load_data
-#from cfkit.configuration import AtomicConfiguration
+
 
 from tqdm import tqdm
 import numpy as np
@@ -14,7 +13,6 @@ client = MongoDatabase('new_data_test_alexander', configuration_type=AtomicConfi
 
 #multiple properties
 # In[ ]:
-#solvated_protein-check out README in data's directory
 def reader_ws22(p):
     atoms=[]
     a=np.load(p)
@@ -26,9 +24,11 @@ def reader_ws22(p):
     hl=a['HL']
     d=a['DP']
     #q=a['nuclear_charges']
-    for i in tqdm(range(len(na))):  #need to change it
+    #for i in tqdm(range(len(na))):  #need to change it
+    for i in tqdm(1200):
         #n=na[i]
-        atom=Atoms(numbers=z[i,:n],positions=r[i,:n,:])
+        #atom = Atoms(numbers=z[i, :], positions=r[i, :n, :])
+        atom=Atoms(numbers=z[i],positions=r[i,:,:])
         #atom.info['energy']=e[i]
         atom.info['energy']=float(e[i])
         atom.arrays['forces']=f[i]
@@ -48,7 +48,7 @@ configurations = load_data(
     elements=['C','N','O','H'],
     default_name='ws22_acrolein',
     reader=reader_ws22,
-    glob_string='ws22',
+    glob_string='acrolein',
     verbose=True,
     generator=False
 )
@@ -204,7 +204,7 @@ ds_id = client.insert_dataset(
         'https://www.nature.com/articles/s41597-023-01998-3#code-availability',
         'https://zenodo.org/record/7032334#.ZEDJes7MJEY',
     ],
-    description ='The WS22 database combines Wigner sampling with geometry interpolation to generate 1.18 '\
+    description='The WS22 database combines Wigner sampling with geometry interpolation to generate 1.18 '\
     'million molecular geometries equally distributed into 10 independent datasets of flexible '\
     'organic molecules with varying sizes and chemical complexity. '\
     'In addition to the potential energy and forces required to construct potential energy surfaces, the WS22 '\
