@@ -104,7 +104,7 @@ all_co_ids, all_pr_ids = list(zip(*ids))
 ds_id = client.insert_dataset(
     do_hashes=all_pr_ids,
     name='Orbnet',
-    authors=['Anders S. Christensen', 'Sai Krishna Sirumalla', 'Zhuoran Qiao', 'Michael B. O’Connor1', 'Daniel G. A. Smith', 'Feizhi Ding', 'Peter J. Bygrave', 'Animashree Anandkumar', 'Matthew Welborn', 'Frederick R. Manby', 'Thomas F. Miller III'],
+    authors=['Anders S. Christensen', 'Sai Krishna Sirumalla', 'Zhuoran Qiao', 'Michael B. O’Connor', 'Daniel G. A. Smith', 'Feizhi Ding', 'Peter J. Bygrave', 'Animashree Anandkumar', 'Matthew Welborn', 'Frederick R. Manby', 'Thomas F. Miller III'],
     links=[
         'https://aip.scitation.org/doi/10.1063/5.0061990',
         'https://figshare.com/articles/dataset/OrbNet_Denali_Training_Data/14883867',
