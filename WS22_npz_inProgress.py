@@ -28,7 +28,7 @@ def reader_ws22(p):
     for i in tqdm(1200):
         #n=na[i]
         #atom = Atoms(numbers=z[i, :], positions=r[i, :n, :])
-        atom=Atoms(numbers=z[i],positions=r[i,:,:])
+        atom=Atoms(numbers=z,positions=r[i])
         #atom.info['energy']=e[i]
         atom.info['energy']=float(e[i])
         atom.arrays['forces']=f[i]
