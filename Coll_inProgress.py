@@ -148,7 +148,7 @@ cs_info = [
 ]
 
 cs_id = client.query_and_insert_configuration_set(
-    co_hashes=all_cos,
+    co_hashes=all_co_ids,
     #query={'names':cs_info['name']}, # find all COs with name=="Graphene"
     query={'names':{'$regex':i['name']+'_*'}},
     name=cs_info['name'],
