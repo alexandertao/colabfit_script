@@ -403,3 +403,4 @@ energy atomization_energy
 BingqingCheng	bunch of datasets
 
 
+alex in progress		https://www.sciencedirect.com/science/article/pii/S2667056923000159#sec0014	Small-data-based machine learning interatomic potentials for graphene grain boundaries enabled by structural unit model			https://data.mendeley.com/datasets/spbfc6ztzb/1		energy, forces		xyz
