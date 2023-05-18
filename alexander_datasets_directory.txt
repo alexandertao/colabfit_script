@@ -326,7 +326,7 @@ forces
 stress
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
-nenci2021																	reformated, not enough values to unpack
+nenci2021																	reformated, not enough values to unpack     #more cs_info to be updated
 /large_data/new_raw_datasets_2.0/nenci2021/nenci2021/xyzfiles
 
 The comment line (line 2) for each .xyz file contains the following quantities in order, with energies reported in kcal/mol:

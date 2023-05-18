@@ -54,32 +54,114 @@ configurations = load_data(
 )
 
 
-'''
 configurations += load_data(
-    file_path='/large_data/new_raw_datasets/rmd17/rmd17/npz_data/',
+    file_path='/large_data/new_raw_datasets_2.0/WS22_database',
     file_format='folder',
     name_field=None,
     elements=['C','N','O','H'],
-    default_name='paracetamol',
-    reader=reader_rmd,
-    glob_string='rmd17_paracetamol.npz',
+    default_name='ws22_nitrophenol',
+    reader=reader_ws22,
+    glob_string='nitrophenol',
     verbose=True,
     generator=False
 )
-
 
 configurations += load_data(
-    file_path='/large_data/new_raw_datasets/rmd17/rmd17/npz_data/',
+    file_path='/large_data/new_raw_datasets_2.0/WS22_database',
     file_format='folder',
     name_field=None,
-    elements=['C','O','H'],
-    default_name='salicylic',
-    reader=reader_rmd,
-    glob_string='rmd17_salicylic.npz',
+    elements=['C','N','O','H'],
+    default_name='ws22_dmabn',
+    reader=reader_ws22,
+    glob_string='dmabn',
     verbose=True,
     generator=False
 )
-'''
+
+configurations += load_data(
+    file_path='/large_data/new_raw_datasets_2.0/WS22_database',
+    file_format='folder',
+    name_field=None,
+    elements=['C','N','O','H'],
+    default_name='ws22_sma',
+    reader=reader_ws22,
+    glob_string='sma',
+    verbose=True,
+    generator=False
+)
+
+configurations += load_data(
+    file_path='/large_data/new_raw_datasets_2.0/WS22_database',
+    file_format='folder',
+    name_field=None,
+    elements=['C','N','O','H'],
+    default_name='ws22_urea',
+    reader=reader_ws22,
+    glob_string='urea',
+    verbose=True,
+    generator=False
+)
+
+configurations += load_data(
+    file_path='/large_data/new_raw_datasets_2.0/WS22_database',
+    file_format='folder',
+    name_field=None,
+    elements=['C','N','O','H'],
+    default_name='ws22_thymine',
+    reader=reader_ws22,
+    glob_string='thymine',
+    verbose=True,
+    generator=False
+)
+
+configurations += load_data(
+    file_path='/large_data/new_raw_datasets_2.0/WS22_database',
+    file_format='folder',
+    name_field=None,
+    elements=['C','N','O','H'],
+    default_name='ws22_urocanic',
+    reader=reader_ws22,
+    glob_string='urocanic',
+    verbose=True,
+    generator=False
+)
+
+configurations += load_data(
+    file_path='/large_data/new_raw_datasets_2.0/WS22_database',
+    file_format='folder',
+    name_field=None,
+    elements=['C','N','O','H'],
+    default_name='ws22_alanine',
+    reader=reader_ws22,
+    glob_string='alanine',
+    verbose=True,
+    generator=False
+)
+
+configurations += load_data(
+    file_path='/large_data/new_raw_datasets_2.0/WS22_database',
+    file_format='folder',
+    name_field=None,
+    elements=['C','N','O','H'],
+    default_name='ws22_o-hbdi',
+    reader=reader_ws22,
+    glob_string='o-hbdi',
+    verbose=True,
+    generator=False
+)
+
+configurations += load_data(
+    file_path='/large_data/new_raw_datasets_2.0/WS22_database',
+    file_format='folder',
+    name_field=None,
+    elements=['C','N','O','H'],
+    default_name='ws22_toluene',
+    reader=reader_ws22,
+    glob_string='toluene',
+    verbose=True,
+    generator=False
+)
+
 
 
 client.insert_property_definition('/home/ubuntu/notebooks/potential-energy.json')
