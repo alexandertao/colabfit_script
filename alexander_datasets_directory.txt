@@ -18,15 +18,15 @@ abberivation of the journal
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-BA10-18: Problem constructing formation energy map, else good. metadata checked,  formation energy checked		 √			under review						review	pending
+BA10-18: Problem constructing formation energy map, else good. metadata checked,  formation energy checked		 			under review						review	pending
 
-W-14: assume virial refers to stress, else good. metadata checked								√			under review						review	pending
+W-14: assume virial refers to stress, else good. metadata checked											                under review						review	pending
 
-QM9x: Trouble getting reader function to work, else good. metadata commented.  						√ 			under review						review	pending
+QM9x: Trouble getting reader function to work, else good. metadata commented.  									            under review						review	pending
 
-NMD-18：reformat needed. fixed, but need comment.  Reformat completed.   Al2O3, Ga2O3, and In2O3 what is that 	√     			under review    only relaxed one			review	pending
+NMD-18：reformat needed. fixed, but need comment.  Reformat completed.   Al2O3, Ga2O3, and In2O3 what is that 	     		under review    only relaxed one			review	pending
 
-PtNi_alloy_dft_Han															√ 			under review (ideal to find some cs regex)	review	pending	
+PtNi_alloy_dft_Han															    			under review (ideal to find some cs regex)	review	pending
 
 
 tmQM: energies are stored in csv file, descrption to be modified.  											have some problem, fix later			file too large
@@ -34,9 +34,9 @@ tmQM: energies are stored in csv file, descrption to be modified.  											ha
 	pymongo.errors.DocumentTooLarge: BSON document too large (21743189 bytes) - the connected server supports BSON document sizes up to 16777216 bytes.
 
 
-CHON: free energy definition, cs_regex name, runs										√			under review (ideal to find some cs regex)	review	pending
+CHON: free energy definition, cs_regex name, runs													under review (ideal to find some cs regex)	review	pending
 
-TiO2: cs_regex name, runs														√			under review (ideal to find some cs regex)	review	pending
+TiO2: cs_regex name, runs														        			under review (ideal to find some cs regex)	review	pending
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -243,11 +243,6 @@ Crystals															metadata finished,  11489*6?
     |- 'total_energy_monomer': Total energy of the isolated molecule (V_uc) [kJ/mol], (1)				-514764.50253786694
     
 
-
-
-
-
-
 OrbNet													               under review
 /large_data/new_raw_datasets_2.0/OrbNet_Denali/xyz_files/CHEMBL299825_conformers/1397e8c0348fb8c71a84225c47332c7026c9aaf909df469f7783f56eba80028e.xyz
 
@@ -256,16 +251,10 @@ OrbNet													               under review
 /large_data/new_raw_datasets_2.0/OrbNet_Denali/denali_labels.csv							
 
 
-
-
-
-
-
 Co_dimer														finished check meta			under review
 /large_data/new_raw_datasets_2.0/Co_dimer/Co_dimer_data/Co_dimer_data.csv  Co_dimer_data_all.csv	
 
 /large_data/new_raw_datasets_2.0/Co_dimer/Co_dimer_data/structures_xyz
-
 
 
 ----------------------------------------------------------
@@ -294,9 +283,7 @@ free_energy
 
 
 plantium															
-/large_data/new_raw_datasets_2.0/NP-DB/NP-DB01.xyz     NP-DB02.xyz		stress  unit?	local energy?			semi done		need to check if it's dft
-
-
+/large_data/new_raw_datasets_2.0/NP-DB/NP-DB01.xyz     NP-DB02.xyz		stress  unit?	local energy?			need to check if it's dft
 forces:R:3:local_energy 
 energy
 virial
@@ -316,7 +303,17 @@ TotEnergy
 force
 nneightol
 
-retrain																				which datasets?
+
+Iron Fe nanoparticles												   finished, unit for stress unclear
+/large_data/new_raw_datasets_2.0/Iron_nanoparticle/convex_hull.xyz
+magnetic_moments
+forces
+virial
+energy
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+retrain																				not sure which datasets to ingest, waiting for Eric's instruction
 /large_data/new_raw_datasets_2.0/LML-retrain  bulk_MD_test.xyz  bulk_MD_train.xyz  vac_MD_test.xyz  vac_MD_train.xyz
 energy
 free_energy
@@ -324,7 +321,6 @@ Temperature
 momenta
 forces
 stress
-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 nenci2021																	reformated, not enough values to unpack     #more cs_info to be updated
 /large_data/new_raw_datasets_2.0/nenci2021/nenci2021/xyzfiles
@@ -344,8 +340,7 @@ python reformatxyz.py
 C, N, and O  F, Cl, and Br S and P Li+ and Na
 
 
-
-WS22																	 need to modify the reader function, meta finished
+WS22																	 need to fix the reader function, metadata finished
 
 /large_data/new_raw_datasets_2.0/WS22_database
 
@@ -368,17 +363,8 @@ CONF 	(120000, 1) 	String identifier of conformations
 
 
 
-Iron Fe nanoparticles												   finished, unit for stress unclear
-/large_data/new_raw_datasets_2.0/Iron_nanoparticle/convex_hull.xyz
-magnetic_moments
-forces
-virial
-energy
-
-
 Glycine Azobenzene flexible molecules									in progress     no operation to execute
 /large_data/new_raw_datasets_2.0/flexible_molecules/Datasets/ Azobenzene_inversion.xyz  Azobenzene_rotation.xyz  Azobenzene_rotation_and_inversion.xyz  Glycine.xyz
-
 
 
 methane																      in progress		script in gh
@@ -386,21 +372,17 @@ methane																      in progress		script in gh
                                                                             BrokenPipeError: [Errno 32] Broken pipe)
 
 
-
 Coll																		in progress     script in gh
 /large_data/new_raw_datasets_2.0/Coll  Coll_test.xyz  Coll_train.xyz  Coll_validation.xyz
 energy atomization_energy
 
-----------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
 
 1000water		1645 row
-                                                                        /large_data/new_raw_datasets_2.0/Ice_Water  dataset_1000_eVAng.xyz
+                                                                       /large_data/new_raw_datasets_2.0/Ice_Water  dataset_1000_eVAng.xyz
 
 
 BingqingCheng	bunch of datasets
 
 
-alex in progress		https://www.sciencedirect.com/science/article/pii/S2667056923000159#sec0014	Small-data-based machine learning interatomic potentials for graphene grain boundaries enabled by structural unit model			https://data.mendeley.com/datasets/spbfc6ztzb/1		energy, forces		xyz
+Graphene Grain Boundaries
+https://www.sciencedirect.com/science/article/pii/S2667056923000159#sec0014	Small-data-based machine learning interatomic potentials for graphene grain boundaries enabled by structural unit model			https://data.mendeley.com/datasets/spbfc6ztzb/1		energy, forces		xyz
