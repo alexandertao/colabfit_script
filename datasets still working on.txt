@@ -1,4 +1,4 @@
-retrain																				not sure which datasets to ingest, waiting for Eric's instruction
+retrain						 row1692														not sure which datasets to ingest, waiting for Eric's instruction
 /large_data/new_raw_datasets_2.0/LML-retrain  bulk_MD_test.xyz  bulk_MD_train.xyz  vac_MD_test.xyz  vac_MD_train.xyz
 energy
 free_energy
@@ -7,13 +7,16 @@ momenta
 forces
 stress
 
-nenci2021																	reformated, not enough values to unpack     #more cs_info to be updated
+nenci2021					row152												reformated, not enough values to unpack     #more cs_info to be updated
 /large_data/new_raw_datasets_2.0/nenci2021/nenci2021/xyzfiles
 
 The comment line (line 2) for each .xyz file contains the following quantities in order, with energies reported in kcal/mol:
 Dimer charge, Dimer multiplicity, Momomer A charge, Monomer A multiplicity, Momomer B charge, Monomer B multiplicity, # of atoms in Monomer A,
-# of atoms in Monomer B, CCSD(T)/CBS,   CCSD(T)/haTZ,   MP2/haTZ,   MP2/CBS,   MP2/aTZ,   MP2/aQZ,   HF/haTZ,   HF/aTZ,   HF/aQZ,   SAPT2+/aDZ Tot,
-SAPT2+/aDZ Elst,   SAPT2+/aDZ Exch,   SAPT2+/aDZ Ind,   SAPT2+/aDZ Disp
+# of atoms in Monomer B,
+
+CCSD(T)/CBS,   CCSD(T)/haTZ,   MP2/haTZ,   MP2/CBS,   MP2/aTZ,   MP2/aQZ,   HF/haTZ,   HF/aTZ,   HF/aQZ,   SAPT2+/aDZ Tot,
+
+
 python reformatxyz.py
 ['-1', '', '1', '-1', '', '1', '', '0', '', '1', '', '', '1', '', '11', '', '1.86728', '', '2.01980', '', '1.76489', '', '1.61236', '', '1.73373',
  '', '1.65831', '', '5.18410', '', '5.17977', '', '5.16731', '', '1.50802', '', '4.23542', '', '4.51330', '-4.38355', '-2.85715\n']
