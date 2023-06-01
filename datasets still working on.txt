@@ -56,13 +56,14 @@ Coll																		in progress     script in gh
 /large_data/new_raw_datasets_2.0/Coll  Coll_test.xyz  Coll_train.xyz  Coll_validation.xyz
 energy atomization_energy
 
+not yet started:
 
-1000water		1645 row
+1000water		row1645
                                                                        /large_data/new_raw_datasets_2.0/Ice_Water  dataset_1000_eVAng.xyz
 
+BingqingCheng	row1007 bunch of datasets
 
-BingqingCheng	bunch of datasets
 
-
-Graphene Grain Boundaries
-https://www.sciencedirect.com/science/article/pii/S2667056923000159#sec0014	Small-data-based machine learning interatomic potentials for graphene grain boundaries enabled by structural unit model			https://data.mendeley.com/datasets/spbfc6ztzb/1		energy, forces		xyz
+Graphene Grain Boundaries row1735
+https://www.sciencedirect.com/science/article/pii/S2667056923000159#sec0014	Small-data-based machine learning interatomic potentials for graphene grain boundaries enabled by structural unit model			https://data.mendeley.com/datasets/spbfc6ztzb/1
+energy, forces		xyz

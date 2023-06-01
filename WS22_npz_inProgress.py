@@ -53,7 +53,6 @@ configurations = load_data(
     generator=False
 )
 
-
 configurations += load_data(
     file_path='/large_data/new_raw_datasets_2.0/WS22_database',
     file_format='folder',
@@ -225,38 +224,38 @@ ids = list(client.insert_data(
 #all_co_ids, all_pr_ids = list(zip(*ids))
 all_cos, all_dos = list(zip(*ids))
 
-'''
+
 cs_info = [
 
-    {"name":"malonaldehyde",
-    "description": "Configurations with malonaldehyde structure)"},
+    {"name":"acrolein",
+    "description": "Configurations with acrolein structure)"},
 
-    {"name": "paracetamol",
-    "description": "Configurations with paracetamol structure"},
+    {"name": "nitrophenol",
+    "description": "Configurations with nitrophenol structure"},
 
-    {"name": "salicylic",
-    "description": "Configurations with salicylic structure"},
+    {"name": "dmabn",
+    "description": "Configurations with dmabn structure"},
 
-    {"name": "uracil",
-    "description": "Configurations with uracil structure"},
+    {"name": "sma",
+    "description": "Configurations with sma structure"},
 
-    {"name": "aspirin",
-    "description": "Configurations with aspirin structure"},
+    {"name": "urea",
+    "description": "Configurations with urea structure"},
 
-    {"name":"benzene",
-    "description": "Configurations with benzene structure"},
+    {"name":"thymine",
+    "description": "Configurations with thymine structure"},
+
+    {"name": "urocanic",
+    "description": "Configurations with urocanic structure"},
+
+    {"name": "alanine",
+    "description": "Configurations with alanine structure"},
+
+    {"name": "o-hbdi",
+    "description": "Configurations with o-hbdi structure"},
 
     {"name": "toluene",
     "description": "Configurations with toluene structure"},
-
-    {"name": "azobenzene",
-    "description": "Configurations with azobenzene structure"},
-
-    {"name": "ethanol",
-    "description": "Configurations with ethanol structure"},
-
-    {"name": "naphthalene",
-    "description": "Configurations with naphthalene structure"},
 ]
 
 cs_ids = []
@@ -271,7 +270,7 @@ for i in cs_info:
     )
 
     cs_ids.append(cs_id)
-'''
+
 
 
 # In[ ]:

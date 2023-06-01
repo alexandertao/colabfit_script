@@ -52,8 +52,6 @@ configurations = load_data(
 
 
 '''
-
-
 cs_list = set()
 for c in configurations:
     cs_list.add(*c.info['_name'])
